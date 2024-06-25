@@ -31,8 +31,8 @@ pub fn App() -> impl IntoView {
         <script>
             window.addEventListener("contextmenu", (e) => {
                 const allowedTypes = ["INPUT", "TEXTAREA"];
-                if (!allowedTypes.includes(event.target.nodeName)) {
-                    event.preventDefault();
+                if (!allowedTypes.includes(e.target.nodeName)) {
+                    e.preventDefault();
                 }
             });
         </script>
