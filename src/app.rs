@@ -28,6 +28,14 @@ pub fn App() -> impl IntoView {
     };
 
     view! {
+        <script>
+            window.addEventListener("contextmenu", (e) => {
+                const allowedTypes = ["INPUT", "TEXTAREA"];
+                if (!allowedTypes.includes(event.target.nodeName)) {
+                    event.preventDefault();
+                }
+            });
+        </script>
         <main class="container">
             <div class="row">
                 <a href="https://tauri.app" target="_blank">
